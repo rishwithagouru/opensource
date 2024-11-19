@@ -1,0 +1,7 @@
+N = int(input())
+
+# Calculate the number of notebooks that can be made
+notebooks = N * 10
+
+# Output the result
+print(notebooks)
