@@ -1,0 +1,8 @@
+# Read the input values
+A, B, C, X = map(int, input().split())
+
+# Check the three possible pairs of contributions
+if (A + B >= X) or (A + C >= X) or (B + C >= X):
+    print("YES")
+else:
+    print("NO")
