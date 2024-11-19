@@ -1,0 +1,10 @@
+# Read input values
+X, Y, Z = map(int, input().split())
+
+# Decision logic
+if X + Y <= Z:
+    print(2)  # Can afford both gym and personal trainer
+elif X <= Z:
+    print(1)  # Can afford only gym
+else:
+    print(0)  # Cannot afford even the gym
