@@ -1,0 +1,14 @@
+# Read the input values
+X, Y, Z = map(int, input().split())
+
+# Calculate the available weight capacity for mangoes
+available_weight = Z - Y
+
+# Calculate the maximum number of mangoes that can be loaded
+if available_weight >= 0:
+    max_mangoes = available_weight // X
+else:
+    max_mangoes = 0
+
+# Output the result
+print(max_mangoes)
