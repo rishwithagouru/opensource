@@ -1,0 +1,17 @@
+# Read the bill amount
+X = int(input())
+
+# Calculate the 10% discount
+discount_1 = X * 0.10
+
+# Calculate the flat discount
+discount_2 = 100
+
+# Choose the maximum discount
+max_discount = max(discount_1, discount_2)
+
+# Calculate the final amount to be paid after the discount
+final_amount = X - max_discount
+
+# Output the final amount
+print(int(final_amount))
