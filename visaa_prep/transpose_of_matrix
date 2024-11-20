@@ -1,0 +1,26 @@
+def transpose_matrix(matrix, N):
+    # Create a new matrix for the transposed result
+    transposed = [[0] * N for _ in range(N)]
+    
+    # Fill the transposed matrix
+    for i in range(N):
+        for j in range(N):
+            transposed[j][i] = matrix[i][j]
+    
+    return transposed
+
+# Read input
+N = int(input().strip())
+matrix = []
+
+# Read the N x N matrix
+for _ in range(N):
+    row = list(map(int, input().strip().split()))
+    matrix.append(row)
+
+# Get the transposed matrix
+transposed_matrix = transpose_matrix(matrix, N)
+
+# Print the transposed matrix
+for row in transposed_matrix:
+    print(" ".join(map(str, row)))
