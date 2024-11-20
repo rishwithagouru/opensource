@@ -1,0 +1,22 @@
+def mirror_image(matrix, N):
+    mirrored = []
+    for row in matrix:
+        mirrored_row = row[::-1]  # Reverse the row
+        mirrored.append(mirrored_row)
+    return mirrored
+
+# Read input
+N = int(input().strip())
+matrix = []
+
+# Read the N x N matrix
+for _ in range(N):
+    row = list(map(int, input().strip().split()))
+    matrix.append(row)
+
+# Get the mirrored matrix
+mirrored_matrix = mirror_image(matrix, N)
+
+# Print the mirrored matrix
+for row in mirrored_matrix:
+    print(" ".join(map(str, row)))
