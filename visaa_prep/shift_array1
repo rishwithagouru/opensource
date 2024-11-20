@@ -1,0 +1,15 @@
+def rotate_array(arr):
+    if len(arr) == 0:
+        return arr  # If the array is empty, return it as is
+    # Rotate by moving the first element to the end
+    return arr[1:] + [arr[0]]
+
+# Read input
+N = int(input().strip())
+array = list(map(int, input().strip().split()))
+
+# Get the rotated array
+result = rotate_array(array)
+
+# Print the result
+print(" ".join(map(str, result)))
