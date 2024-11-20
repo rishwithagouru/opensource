@@ -1,0 +1,27 @@
+def reduce_string(s):
+    # Initialize variables
+    result = ""
+    count = 1
+    
+    # Iterate through the string
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:  # Check if the current character is the same as the previous one
+            count += 1
+        else:
+            # Append the previous character and its count to the result
+            result += s[i - 1] + str(count)
+            count = 1  # Reset the count for the new character
+    
+    # Append the last character and its count
+    result += s[-1] + str(count)
+    
+    return result
+
+# Read input
+input_string = input().strip()
+
+# Get the reduced string
+output_string = reduce_string(input_string)
+
+# Print the result
+print(output_string)
