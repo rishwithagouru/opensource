@@ -1,0 +1,8 @@
+# Read input
+X, Y = map(int, input().strip().split())
+
+# Calculate the maximum number of chocolates
+max_chocolates = X // Y
+
+# Print the result
+print(max_chocolates)
