@@ -1,0 +1,19 @@
+# Function to determine if Binary can hear the command
+def can_binary_hear(frequency):
+    if 67 <= frequency <= 45000:
+        return "YES"
+    else:
+        return "NO"
+
+# Read number of test cases
+T = int(input().strip())
+
+# Process each test case
+results = []
+for _ in range(T):
+    X = int(input().strip())
+    result = can_binary_hear(X)
+    results.append(result)
+
+# Print all results, each on a new line
+print("\n".join(results))
