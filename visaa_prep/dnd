@@ -1,0 +1,20 @@
+# Read the input
+n, m = map(int, input().strip().split())
+array = list(map(int, input().strip().split()))
+
+# Initialize sums
+num1 = 0  # Sum of integers not divisible by m
+num2 = 0  # Sum of integers divisible by m
+
+# Iterate through the array to calculate the sums
+for num in array:
+    if num % m == 0:
+        num2 += num  # Add to num2 if divisible by m
+    else:
+        num1 += num  # Add to num1 if not divisible by m
+
+# Calculate the result
+result = num2 - num1  # Change this to num2 - num1
+
+# Print the result
+print(result)
