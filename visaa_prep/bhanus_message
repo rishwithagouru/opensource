@@ -1,0 +1,37 @@
+def is_valid_number(number):
+    # Check if the number is in the format "+xx 1234567890"
+    if number.startswith('+'):
+        parts = number.split(' ')
+        if len(parts) != 2:
+            return "Incorrect"
+        
+        country_code = parts[0][1:]  # Extract the country code
+        digits = parts[1]  # Extract the digits part
+        
+        # Validate country code
+        if not (1 <= len(country_code) <= 2) or not country_code.isdigit():
+            return "Incorrect"
+        
+        # Validate digits
+        if len(digits) != 10 or not digits.isdigit():
+            return "Incorrect"
+        
+    else:
+        # If there's no country code, validate as a simple 10 digit number
+        if len(number) != 10 or not number.isdigit():
+            return "Incorrect"
+    
+    # Check that the sum of the digits is greater than 0
+    digit_sum = sum(int(d) for d in (digits if ' ' in number else number))
+    
+    if digit_sum > 0:
+        return "Correct"
+    else:
+        return "Incorrect"
+
+# Read input
+input_number = input().strip()
+# Validate the number
+result = is_valid_number(input_number)
+# Print the result
+print(result)
