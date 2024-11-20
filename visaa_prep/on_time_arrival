@@ -1,0 +1,16 @@
+def can_reach_on_time(X):
+    # Check if Ajay leaves enough time to reach on time
+    return X >= 30
+
+# Read the number of test cases
+T = int(input().strip())
+
+# Iterate through the test cases
+for _ in range(T):
+    # Read the value of X for each test case
+    X = int(input().strip())
+    # Determine if Ajay can reach on time
+    if can_reach_on_time(X):
+        print("YES")
+    else:
+        print("NO")
