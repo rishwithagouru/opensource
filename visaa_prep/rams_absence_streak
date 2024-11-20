@@ -1,0 +1,25 @@
+def max_consecutive_absent_days(attendance):
+    max_absent = 0  # To keep track of the maximum number of consecutive absences
+    current_absent = 0  # To count the current streak of absences
+    
+    for day in attendance:
+        if day == 0:  # If the day is absent
+            current_absent += 1  # Increment the current absent count
+        else:
+            max_absent = max(max_absent, current_absent)  # Update max if current is greater
+            current_absent = 0  # Reset current absent count
+    
+    # Final check in case the longest streak ends at the last element
+    max_absent = max(max_absent, current_absent)
+    
+    return max_absent
+
+# Read input
+N = int(input().strip())
+attendance = list(map(int, input().strip().split()))
+
+# Get the maximum number of consecutive absent days
+result = max_consecutive_absent_days(attendance)
+
+# Print the result
+print(result)
