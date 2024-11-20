@@ -1,0 +1,11 @@
+# Read the input number as a string
+N = input().strip()
+
+# Calculate the sum of the digits
+digit_sum = sum(int(digit) for digit in N)
+
+# Check if the sum is even or odd
+if digit_sum % 2 == 0:
+    print("Vignesh")
+else:
+    print("Charan")
