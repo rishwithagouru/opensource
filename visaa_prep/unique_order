@@ -1,0 +1,20 @@
+def unique_elements(arr):
+    seen = set()  # To track seen elements
+    unique_list = []  # To maintain the order of unique elements
+
+    for num in arr:
+        if num not in seen:
+            seen.add(num)  # Mark the number as seen
+            unique_list.append(num)  # Add to the unique list
+
+    return unique_list
+
+# Read input
+N = int(input().strip())
+array = list(map(int, input().strip().split()))
+
+# Get unique elements
+result = unique_elements(array)
+
+# Print the result
+print(" ".join(map(str, result)))
