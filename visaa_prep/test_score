@@ -1,0 +1,12 @@
+def is_possible_to_achieve_y_marks(N, X, Y):
+    # Check if Y is a multiple of X and the number of problems doesn't exceed N
+    if Y % X == 0 and Y // X <= N:
+        return "YES"
+    else:
+        return "NO"
+
+# Read input
+N, X, Y = map(int, input().split())
+
+# Print the result
+print(is_possible_to_achieve_y_marks(N, X, Y))
