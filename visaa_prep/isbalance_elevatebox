@@ -1,0 +1,31 @@
+# Read the size of the array
+N = int(input().strip())
+
+# Read the elements of the array
+A = list(map(int, input().strip().split()))
+
+# Initialize the Balance Array B
+B = [0] * N
+
+# Calculate the total sum of the array
+total_sum = sum(A)
+
+# Initialize left weight
+left_weight = 0
+
+# Iterate through the array to calculate the Balance Array
+for i in range(N):
+    # Current element
+    current = A[i]
+    
+    # Right weight is total sum minus left weight minus current element
+    right_weight = total_sum - left_weight - current
+    
+    # Calculate the balance value
+    B[i] = abs(left_weight - right_weight)
+    
+    # Update the left weight for the next iteration
+    left_weight += current
+
+# Print the Balance Array B
+print(" ".join(map(str, B)))
