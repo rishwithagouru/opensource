@@ -1,0 +1,14 @@
+# Read input
+A = int(input().strip())
+
+# Determine the season based on the month number
+if A < 1 or A > 12:
+    print("Invalid")
+elif 3 <= A <= 5:
+    print("Spring")
+elif 6 <= A <= 8:
+    print("Summer")
+elif 9 <= A <= 11:
+    print("Autumn")
+else:  # This covers December, January, and February
+    print("Winter")
