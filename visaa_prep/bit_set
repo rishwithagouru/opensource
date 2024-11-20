@@ -1,0 +1,12 @@
+# Read input values
+N = int(input().strip())  # Read the integer N
+k = int(input().strip())  # Read the integer k
+
+# Create the bit mask for the k-th bit
+mask = 1 << (k - 1)
+
+# Check if the k-th bit is set
+if N & mask:
+    print("true")
+else:
+    print("false")
