@@ -1,0 +1,19 @@
+def has_pair_with_sum(arr, K):
+    seen_numbers = set()  # To store numbers we've seen so far
+    for number in arr:
+        complement = K - number  # Find the complement that would sum to K
+        if complement in seen_numbers:
+            return True  # Pair found
+        seen_numbers.add(number)  # Add the current number to the set
+    return False  # No pair found
+
+# Read input
+N = int(input().strip())
+arr = list(map(int, input().strip().split()))
+K = int(input().strip())
+
+# Check for the pair and print the result
+if has_pair_with_sum(arr, K):
+    print("true")
+else:
+    print("false")
