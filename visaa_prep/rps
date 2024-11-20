@@ -1,0 +1,18 @@
+def determine_winner(vignesh, charan):
+    # If both players choose the same, it's a draw
+    if vignesh == charan:
+        return "NULL"
+    
+    # Check the winning conditions
+    if (vignesh == 'R' and charan == 'S') or \
+       (vignesh == 'S' and charan == 'P') or \
+       (vignesh == 'P' and charan == 'R'):
+        return "Vignesh"
+    else:
+        return "Charan"
+
+# Read input
+vignesh, charan = input().split()
+
+# Print the result
+print(determine_winner(vignesh, charan))
