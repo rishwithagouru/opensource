@@ -1,0 +1,15 @@
+# Read input
+X, N = map(int, input().strip().split())
+
+# Calculate total aircraft needed
+total_aircraft_needed = (N + 99) // 100
+
+# Calculate new planes needed
+new_planes_needed = total_aircraft_needed - X
+
+# If new planes needed is less than or equal to zero, set it to zero
+if new_planes_needed < 0:
+    new_planes_needed = 0
+
+# Print the result
+print(new_planes_needed)
