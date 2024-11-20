@@ -1,0 +1,13 @@
+# Read the number of test cases
+T = int(input().strip())
+
+# Process each test case
+for _ in range(T):
+    # Read N and M
+    N, M = map(int, input().strip().split())
+    
+    # Calculate the number of students without tickets
+    students_without_tickets = max(0, N - M)
+    
+    # Print the result
+    print(students_without_tickets)
