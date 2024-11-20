@@ -1,0 +1,17 @@
+# Function to calculate runs needed to win
+def runs_needed_to_win(X, Y):
+    return X - Y + 1
+
+# Read number of test cases
+T = int(input().strip())
+
+# Process each test case
+results = []
+for _ in range(T):
+    X, Y = map(int, input().strip().split())
+    result = runs_needed_to_win(X, Y)
+    results.append(result)
+
+# Print all results, each on a new line
+for res in results:
+    print(res)
