@@ -1,0 +1,11 @@
+# Read the size of the array
+n = int(input().strip())
+
+# Read the array elements
+array = list(map(int, input().strip().split()))
+
+# Reverse the array
+reversed_array = array[::-1]
+
+# Print the reversed array as space-separated integers
+print(" ".join(map(str, reversed_array)))
