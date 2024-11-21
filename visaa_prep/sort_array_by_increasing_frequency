@@ -1,0 +1,20 @@
+from collections import Counter
+
+def frequency_sort(nums):
+    # Step 1: Count the frequency of each element
+    frequency = Counter(nums)
+    
+    # Step 2: Sort the array based on frequency and value
+    sorted_nums = sorted(nums, key=lambda x: (frequency[x], -x))
+    
+    return sorted_nums
+
+# Read input
+N = int(input().strip())
+nums = list(map(int, input().strip().split()))
+
+# Get the frequency sorted array
+result = frequency_sort(nums)
+
+# Print the result
+print(" ".join(map(str, result)))
