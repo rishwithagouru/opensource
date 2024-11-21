@@ -1,0 +1,23 @@
+def print_diamond_pattern(N):
+    # Print the upper part of the diamond
+    for i in range(1, N + 1):
+        # Print i stars
+        print('*' * i, end='')
+        # Print spaces
+        print(' ' * (2 * (N - i)), end='')
+        # Print i stars again
+        print('*' * i)
+
+    # Print the lower part of the diamond (without the middle line)
+    for i in range(N - 1, 0, -1):
+        # Print i stars
+        print('*' * i, end='')
+        # Print spaces
+        print(' ' * (2 * (N - i)), end='')
+        # Print i stars again
+        print('*' * i)
+
+# Input reading
+if __name__ == "__main__":
+    N = int(input().strip())  # Read the input integer
+    print_diamond_pattern(N)  # Call the function to print the pattern
