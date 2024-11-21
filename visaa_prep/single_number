@@ -1,0 +1,12 @@
+def find_single_number(arr):
+    result = 0
+    for number in arr:
+        result ^= number
+    return result
+
+# Read input
+N = int(input())
+arr = list(map(int, input().split()))
+
+# Find and print the single number
+print(find_single_number(arr))
