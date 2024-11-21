@@ -1,0 +1,18 @@
+def highest_altitude(heights):
+    current_altitude = 0
+    max_altitude = 0
+
+    for height in heights:
+        current_altitude += height  # Adjust altitude based on the tree height
+        if current_altitude > max_altitude:
+            max_altitude = current_altitude  # Update max altitude if current is higher
+
+    return max_altitude
+
+# Input reading
+if __name__ == "__main__":
+    n = int(input())  # Number of trees
+    heights = list(map(int, input().split()))  # Heights of the trees
+
+    result = highest_altitude(heights)
+    print(result)
