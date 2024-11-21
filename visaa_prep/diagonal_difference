@@ -1,0 +1,28 @@
+def diagonalDifference(arr):
+    n = len(arr)  # Size of the square matrix
+    primary_diagonal_sum = 0
+    secondary_diagonal_sum = 0
+
+    for i in range(n):
+        primary_diagonal_sum += arr[i][i]          # Elements from top-left to bottom-right
+        secondary_diagonal_sum += arr[i][n - 1 - i]  # Elements from top-right to bottom-left
+
+    # Calculate the absolute difference
+    difference = abs(primary_diagonal_sum - secondary_diagonal_sum)
+    
+    return difference
+
+# Input reading
+if __name__ == "__main__":
+    n = int(input().strip())  # Read the size of the matrix
+    arr = []
+
+    for _ in range(n):
+        row = list(map(int, input().strip().split()))
+        arr.append(row)
+
+    # Get the result
+    result = diagonalDifference(arr)
+    
+    # Print the result
+    print(result)
