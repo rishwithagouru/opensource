@@ -1,0 +1,27 @@
+def max_average_subarray(nums, k):
+    n = len(nums)
+    
+    # Step 1: Calculate the sum of the first 'k' elements
+    current_sum = sum(nums[:k])
+    max_sum = current_sum
+    
+    # Step 2: Sliding window to find the maximum sum of subarrays of length k
+    for i in range(k, n):
+        current_sum += nums[i] - nums[i - k]  # Slide the window
+        max_sum = max(max_sum, current_sum)  # Update max_sum if current_sum is greater
+    
+    # Step 3: Calculate the maximum average
+    max_average = max_sum / k
+    
+    # Step 4: Return the result formatted to 4 decimal places
+    return f"{max_average:.4f}"
+
+# Read input
+N, K = map(int, input().split())
+nums = list(map(int, input().split()))
+
+# Get the maximum average
+result = max_average_subarray(nums, K)
+
+# Print the result
+print(result)
