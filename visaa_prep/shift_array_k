@@ -1,0 +1,25 @@
+def rotate_array(arr, K):
+    N = len(arr)
+    K = K % N  # Normalize K to avoid unnecessary rotations
+    
+    # Step 1: Reverse the entire array
+    arr.reverse()
+    
+    # Step 2: Reverse the first K elements
+    arr[:K] = reversed(arr[:K])
+    
+    # Step 3: Reverse the remaining N-K elements
+    arr[K:] = reversed(arr[K:])
+    
+    return arr
+
+# Read input
+N = int(input())
+arr = list(map(int, input().split()))
+K = int(input())
+
+# Rotate the array
+rotated_array = rotate_array(arr, K)
+
+# Print the result
+print(' '.join(map(str, rotated_array)))
