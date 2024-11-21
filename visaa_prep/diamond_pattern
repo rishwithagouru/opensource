@@ -1,0 +1,13 @@
+def print_pattern(N):
+    # Print the increasing part
+    for i in range(1, N + 1):
+        print('*' * i)
+    
+    # Print the decreasing part
+    for i in range(N - 1, 0, -1):
+        print('*' * i)
+
+# Input reading
+if __name__ == "__main__":
+    N = int(input().strip())  # Read the input integer
+    print_pattern(N)  # Call the function to print the pattern
