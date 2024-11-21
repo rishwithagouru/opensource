@@ -1,0 +1,30 @@
+def plusMinus(arr):
+    n = len(arr)  # Get the size of the array
+    positive_count = 0
+    negative_count = 0
+    zero_count = 0
+
+    # Count positive, negative, and zero elements
+    for num in arr:
+        if num > 0:
+            positive_count += 1
+        elif num < 0:
+            negative_count += 1
+        else:
+            zero_count += 1
+
+    # Calculate ratios
+    positive_ratio = positive_count / n
+    negative_ratio = negative_count / n
+    zero_ratio = zero_count / n
+
+    # Print the results with six decimal places
+    print(f"{positive_ratio:.6f}")
+    print(f"{negative_ratio:.6f}")
+    print(f"{zero_ratio:.6f}")
+
+if __name__ == '__main__':
+    n = int(input().strip())  # Read the size of the array
+    arr = list(map(int, input().rstrip().split()))  # Read the array elements
+
+    plusMinus(arr)  # Call the function to calculate and print ratios
