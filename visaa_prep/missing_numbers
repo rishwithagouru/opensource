@@ -1,0 +1,41 @@
+def missingNumbers(arr, brr):
+    # Count frequencies in the original array (brr)
+    frequency_map_b = {}
+    for num in brr:
+        if num in frequency_map_b:
+            frequency_map_b[num] += 1
+        else:
+            frequency_map_b[num] = 1
+
+    # Count frequencies in the modified array (arr)
+    frequency_map_a = {}
+    for num in arr:
+        if num in frequency_map_a:
+            frequency_map_a[num] += 1
+        else:
+            frequency_map_a[num] = 1
+
+    # Find missing numbers
+    missing_numbers = set()
+    for num, count_in_b in frequency_map_b.items():
+        count_in_a = frequency_map_a.get(num, 0)
+        
+        # If the count in brr is greater than in arr, it's missing
+        if count_in_b > count_in_a:
+            missing_numbers.add(num)
+
+    # Return sorted list of missing numbers
+    return sorted(missing_numbers)
+
+# Example usage
+if __name__ == "__main__":
+    # Read size of the first list
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    # Read size of the second list
+    m = int(input())
+    brr = list(map(int, input().split()))
+
+    result = missingNumbers(arr, brr)
+    print(" ".join(map(str, result)))  # Print the result
