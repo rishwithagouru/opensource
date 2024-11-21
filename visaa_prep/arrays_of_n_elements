@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class Solution {
+    
+    public static int[] preFilledArray(int n) {
+        // Create an array of size n
+        int[] result = new int[n];
+        
+        // Fill the array with integers from 0 to n-1
+        for (int i = 0; i < n; i++) {
+            result[i] = i; // Fill with values 0 to n-1
+        }
+        
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        // Example usage
+        int n = 10; // You can change this value for testing
+        int[] array = preFilledArray(n);
+        
+        // Print the result
+        System.out.println(Arrays.toString(array));
+    }
+}
