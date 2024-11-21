@@ -1,0 +1,28 @@
+def calculate_sums(N, matrix):
+    row_sums = [0] * N
+    column_sums = [0] * N
+    
+    # Calculate row sums and column sums
+    for i in range(N):
+        for j in range(N):
+            row_sums[i] += matrix[i][j]
+            column_sums[j] += matrix[i][j]
+    
+    # Calculate the resultant array A
+    result = [row_sums[i] + column_sums[i] for i in range(N)]
+    
+    return result
+
+# Read input
+N = int(input())
+matrix = []
+
+for _ in range(N):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+# Calculate the resultant array
+result = calculate_sums(N, matrix)
+
+# Print the result
+print(' '.join(map(str, result)))
