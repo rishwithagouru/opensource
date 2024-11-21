@@ -1,0 +1,23 @@
+def max_triangle_perimeter(sticks):
+    # Sort the sticks in descending order
+    sticks.sort(reverse=True)
+    
+    # Check for the largest triplet that can form a triangle
+    for i in range(len(sticks) - 2):
+        # Check the triangle inequality
+        if sticks[i] < sticks[i + 1] + sticks[i + 2]:
+            # Calculate the perimeter
+            return sticks[i] + sticks[i + 1] + sticks[i + 2]
+    
+    # If no valid triangle can be formed
+    return -1
+
+# Read input
+N = int(input())
+sticks = list(map(int, input().split()))
+
+# Get the maximum perimeter
+result = max_triangle_perimeter(sticks)
+
+# Print the result
+print(result)
