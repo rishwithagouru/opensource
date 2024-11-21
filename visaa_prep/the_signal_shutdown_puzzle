@@ -1,0 +1,29 @@
+def fix_grid(N, M, grid):
+    # Step 1: Identify rows and columns that need to be turned OFF
+    rows_to_off = set()
+    cols_to_off = set()
+    
+    for i in range(N):
+        for j in range(M):
+            if grid[i][j] == 0:
+                rows_to_off.add(i)
+                cols_to_off.add(j)
+    
+    # Step 2: Update the grid based on the identified rows and columns
+    for i in range(N):
+        for j in range(M):
+            if i in rows_to_off or j in cols_to_off:
+                grid[i][j] = 0
+    
+    return grid
+
+# Read input
+N, M = map(int, input().split())
+grid = [list(map(int, input().split())) for _ in range(N)]
+
+# Fix the grid
+fixed_grid = fix_grid(N, M, grid)
+
+# Print the final state of the grid
+for row in fixed_grid:
+    print(' '.join(map(str, row)))
