@@ -1,0 +1,23 @@
+def binary_search(arr, x):
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2  # Find the middle index
+
+        if arr[mid] == x:  # Check if the middle element is the target
+            return mid
+        elif arr[mid] < x:  # If target is greater, ignore left half
+            left = mid + 1
+        else:  # If target is smaller, ignore right half
+            right = mid - 1
+
+    return -1  # Target not found
+
+# Input reading
+if __name__ == "__main__":
+    n = int(input().strip())  # Size of the array
+    arr = list(map(int, input().strip().split()))  # Array elements
+    x = int(input().strip())  # Target element to search for
+
+    result = binary_search(arr, x)  # Perform binary search
+    print(result)  # Output the result
