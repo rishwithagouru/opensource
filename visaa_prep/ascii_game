@@ -1,0 +1,8 @@
+def toggle_case(s):
+    return s.swapcase()
+
+# Input reading
+if __name__ == "__main__":
+    s = input().strip()  # Read the input string
+    result = toggle_case(s)  # Toggle the case
+    print(result)  # Output the result
